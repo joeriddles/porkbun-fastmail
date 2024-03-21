@@ -103,7 +103,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("domain")
+    parser.add_argument("domain", help="The domain to add Fastmail DNS records to")
     args = parser.parse_args()
     domain: str = args.domain
 
