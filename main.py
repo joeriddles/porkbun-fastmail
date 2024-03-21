@@ -62,7 +62,13 @@ class PorkbunService:
         json_data = json.dumps(data)
         url = self.ROOT_URL + relative_url
         response = requests.post(url, data=json_data, timeout=5.0)
-        response.raise_for_status()
+        try:
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as error:
+            raise requests.exceptions.HTTPError(
+                "Did you make sure to enable API access for this domain in the Porkbun admin?"
+            ) from error
+
         response_data = response.json()
         if response_data["status"].casefold() != "success":
             raise ValueError(response_data)
