@@ -9,4 +9,6 @@ CLI to quickly add DNS records for [Fastmail](https://fastmail.com) to a [Porkbu
 4. Verify the records were created correctly in the Porkbun admin panel
 
 ### Notes
-The archived [porkbun-dynamic-dns-python](https://github.com/porkbundomains/porkbun-dynamic-dns-python/) project was used for reference.
+The Porkbun API docs: https://porkbun.com/api/json/v3/documentation.
+
+The archived [porkbun-dynamic-dns-python](https://github.com/porkbundomains/porkbun-dynamic-dns-python/) project was also used for reference.
