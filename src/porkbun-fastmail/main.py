@@ -99,7 +99,7 @@ class PorkbunService:
         return created_record_id
 
 
-if __name__ == "__main__":
+def main():
     import argparse
 
     parser = argparse.ArgumentParser()
@@ -161,3 +161,7 @@ if __name__ == "__main__":
     for record in FASTMAIL_RECORDS:
         record_id = service.add_record(domain, record)
         print(f"New record ID: {record_id}")
+
+
+if __name__ == "__main__":
+    main()

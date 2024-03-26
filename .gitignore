@@ -1,2 +1,18 @@
-.env
+# Python
+*.pyc
+*.pyc
+__pycache__
+__pycache__
+*.egg-info
 .venv
+.venv
+dist
+
+# Secrets
+.env
+
+# OS
+.DS_Store
+
+# Misc
+/tmp

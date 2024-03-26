@@ -10,7 +10,7 @@ CLI to quickly add DNS records for [Fastmail](https://fastmail.com) to a [Porkbu
 4. Install the python dependencies via `pip install -r requirements.txt`
 5. Create a `.env` file from `.env.template` and populate the secrets
 6. Load the `.env` file values into your shell, preferable using [direnv](https://direnv.net/)
-7. Run `python main.py <yourdomain>`
+7. Run `python -m porkbun-fastmail <yourdomain>`
 8. Verify the records were created correctly in the Porkbun admin panel
 9. Check the DNS records in the [Fastmail domain settings](https://app.fastmail.com/settings/domains)
 10. (Optional) Add a new email address in the [Fastmail email addresses settings](https://app.fastmail.com/settings/addresses)
@@ -20,3 +20,29 @@ CLI to quickly add DNS records for [Fastmail](https://fastmail.com) to a [Porkbu
 The Porkbun API docs: https://porkbun.com/api/json/v3/documentation.
 
 The archived [porkbun-dynamic-dns-python](https://github.com/porkbundomains/porkbun-dynamic-dns-python/) project was also used for reference.
+
+### Build
+
+Install build dependencies
+
+```shell
+python3 -m pip install --upgrade build twine
+```
+
+Build
+
+```shell
+python3 -m build
+```
+
+Upload to [test.pypi.org](https://test.pypi.org)
+
+```shell
+python3 -m twine upload --repository testpypi dist/*
+```
+
+Upload to [PyPI](https://pypi.org)
+
+```shell
+python3 -m twine upload dist/*
+```
